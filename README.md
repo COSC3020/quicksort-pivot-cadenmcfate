@@ -23,4 +23,6 @@ might help with the notation for mathematical expressions.
 
 ## Answer
 
-When choosing our pivot to be a median of 3 elements, we ensure that the worst case pivots are avoided: the least and greatest elements. Hence, we have a new equation: Our chosen pivot in this strategy is equally likely to be the $i\text{th}$ smallest for any $i=2,3,...n-1$, so our chances of choosing a pivot from the middle $\frac{n}{2}$ portion of the array are now greater than $\frac{1}{2}$. Therefore, this method if more likely to pick a good pivot.
+When choosing our pivot to be a median of 3 elements, we ensure that the worst case pivots are avoided: the least and greatest elements. Hence, we have a new equation: Our chosen pivot in this strategy is equally likely to be the $i\text{th}$ smallest for any $i=2,3,...n-1$, so our chances of choosing a pivot from the middle $\frac{n}{2}$ portion of the array are now greater than $\frac{1}{2}$. 
+
+The new probability is $\frac{1}{2}+\frac{2}{n}$ since the chance of choosing the least or greatest element is avoided. Therefore, this method is more likely to pick a good pivot.
