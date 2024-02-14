@@ -22,7 +22,23 @@ page](https://docs.github.com/en/get-started/writing-on-github/working-with-adva
 might help with the notation for mathematical expressions.
 
 ## Answer
+//Redid probability to not depend on $n$.
 
-When choosing our pivot to be a median of 3 elements, we ensure that the worst case pivots are avoided: the least and greatest elements. Hence, we have a new equation: Our chosen pivot in this strategy is equally likely to be the $i\text{th}$ smallest for any $i=2,3,...n-1$, so our chances of choosing a pivot from the middle $\frac{n}{2}$ portion of the array are now greater than $\frac{1}{2}$. 
+//Briefly glanced at previous student repositories to undertand how to go about finding the probability.
 
-The new probability is $\frac{1}{2}+\frac{2}{n}$ since the chance of choosing the least or greatest element is avoided. Therefore, this method is more likely to pick a good pivot.
+Using the suggestion from slide 34, we can divide an array of size $n$ into three chunks: < pivot, good pivot, > pivot, which we can denote as A,B,C, respectively. A accounts for 1/4 of the array, B is 1/2, and C is 1/4. We want to determine the probability of finding an element of B using the median of three strategy. When we are choosing our 3 elements, we can have any possible arrangement of elements from A, B, or C. Finding a bad pivot means our median of three doesn't belong in B. Permutations that would lead to this outcome can be denoted as follows:
+
+AAA, AAC, ACA, ACC, CAA, CAC, CCA, CCC (these each have a probability of $\frac{1}{4^3}$ = 1/64)
+
+AAB, ABA, BAA, CCB, CBC, BCC. (these each have a probability of $\frac{1}{4^2}*\frac{1}{2}$ = 1/32)
+
+Adding it up we get 8/64 + 6/32 = 5/16
+
+The probability of getting a bad pivot is 5/16, so the probability of getting a good pivot is 11/16, or 68.75%.
+
+This is greater than 50%, so the median of three method makes it more likely to select a good pivot.
+
+
+
+
+
